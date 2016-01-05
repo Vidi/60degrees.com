@@ -1,0 +1,19 @@
+/*
+Theme Name: 60 Degrees [1.0]
+Theme URI: http://www.60degrees.com
+Author: Steve Ferrar
+Author URI: http://www.steveferrar.com
+Description: Theme for 60 Degrees (January 2016)
+Version: 1.0
+Tags: Custom Theme, Bootstrap, Boilerplate, 60 Degrees Recruitment, Steve Ferrar, Kate Johnson
+*/
+
+
+/* = Get Stylesheets
+-----------------------------------------------*/
+
+/* Bootstrap */
+@import url("css/bootstrap.min.css");
+
+/* Custom */
+@import url("css/main.css");
