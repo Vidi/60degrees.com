@@ -28,7 +28,7 @@ The template part for displaying the CAROUSEL section.
 
 									<li>
 
-										<img src="<?php echo $carousel_image[0]; ?>" alt="<?php if(get_sub_field('title')): echo get_sub_field('title'); endif; ?>" class="carousel__image" />
+										<img src="<?php echo $carousel_image[0]; ?>" alt="<?php if(get_sub_field('title')): echo get_sub_field('title'); endif; ?>" class="carousel__image" data-no-retina/>
 
 										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 carousel__content">
 											<?php if(get_sub_field('title')): echo '<p class="carousel__title">' .  get_sub_field('title') . '</p>'; endif; ?>
