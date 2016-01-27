@@ -204,10 +204,10 @@
 			
 		opacity:1;
 		
-		-webkit-transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1);
-		-moz-transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1);
-		-o-transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1);
-		transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1); 
+		-webkit-transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+		-moz-transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+		-o-transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+		transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1); 
 	}
 	
 		a:hover {
@@ -218,10 +218,10 @@
 			
 			opacity:0.75;
 		
-			-webkit-transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1);
-			-moz-transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1);
-			-o-transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1);
-			transition:opacity 150ms cubic-bezier(0.42, 0, 0.58, 1); 
+			-webkit-transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+			-moz-transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+			-o-transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+			transition:all 150ms cubic-bezier(0.42, 0, 0.58, 1); 
 		}
 	
 	
@@ -510,15 +510,71 @@
 		position:relative;
 		float:left;
 
-		margin:0px auto;
+		margin:0px 5px;
 		padding:0px;
 		border:0px none;
 	}
 
 	.header__navigation a{
+		background:#FFFFFF;
+
+		width:auto;
+		height:42px;
+
+		display:block;
+		position:relative;
+
+		font-weight:bold;
+		text-transform:uppercase;
+
+		margin:0px auto;
+		padding:10px 14px 7px;
+		border:0px none;
 	}
 
+	.header__navigation a:hover,
 	.header__navigation li.current-menu-item a{
+		background:#4a5e7e;
+		color:#FFFFFF;
+		opacity:1.0;
+	}
+
+	@media (max-width:767px){
+		.header__navigation{
+			background:rgba(255,255,255,0.95);
+
+			width:100%;
+			min-width:300px;
+			height:100%;
+
+			position:fixed;
+			display:none;
+			z-index:9999;
+			top:0px;
+			left:0px;
+
+			margin:0px auto;
+			padding:20px;
+			border:0px none;
+		}
+
+		.header__navigation ul,
+		.header__navigation li{
+			width:100%;
+			height:auto;
+
+			display:block;
+			position:relative;
+
+			margin:0px auto;
+			padding:0px;
+			border:0px none;
+		}
+
+		.header__navigation a{
+			background:rgba(215,215,215,0.95);
+			margin:5px auto;
+		}
 	}
 		
 		

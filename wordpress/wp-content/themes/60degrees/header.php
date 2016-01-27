@@ -73,7 +73,7 @@
 				<img src="" alt="60 Degrees" />
 			</div>
 			
-			<nav class="header__navigation col-xs-12 col-sm-9 col-md-10 col-lg-10">
+			<nav class="header__navigation hidden-xs col-sm-9 col-md-10 col-lg-10">
 				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 			</nav>
 	
