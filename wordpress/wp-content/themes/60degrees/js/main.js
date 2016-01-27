@@ -24,8 +24,21 @@ $(document).ready(function(){
 			$('.carousel__image').show();
 			$('.carousel__content').show();
 		},
-		slideshowSpeed:5000,
-		animationSpeed:500
+		slideshowSpeed:7500,
+		animationSpeed:750
+	});
+
+	$('.js-flexslider--quotes').flexslider({
+		animation: 'fade',
+		controlNav: true,
+		directionNav: false,
+		keyboard: true,
+		pauseOnHover: false,
+		start: function(){
+			$('.quotes__content').show();
+		},
+		slideshowSpeed:7500,
+		animationSpeed:750
 	});
 
 
