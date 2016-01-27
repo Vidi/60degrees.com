@@ -4,13 +4,74 @@
 */
 ?>
 
-	<div class="clearfix"></div>
-	<?php // header.php: <div id="page-wrapper"> ?>
+		<div class="clearfix"></div>
+		<?php // header.php: <div id="page-wrapper"> ?>
+		</div>
+
+	<div id="push"></div>
+	<?php // header.php: <div id="page-container"> ?>
 	</div>
+
+	<div id="footer-container">
 	
-	<footer id="footer" class="">
-		&copy; <?php echo date('Y') ?>
-	</footer>
+		<footer id="footer" class="footer">
+
+			<div class="footer__top">
+
+				<div class="container">
+
+					<div class="row">
+			
+						<?php if (get_field('footer_text',7)): ?>
+
+							<div class="footer__about hidden-xs col-sm-6 col-md-5 col-lg-5">
+								<h6>About</h6>
+								<?php echo get_field('footer_text',7); ?>
+								<a href="<?php echo get_permalink(7); ?>" title="Read More" class="btn btn--blue">Read More</a>
+							</div>
+
+						<?php endif; ?>
+
+						<div class="footer__navigation col-xs-12 col-sm-3 col-md-3 col-lg-2">
+							<h6>Company</h6>
+							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+						</div>
+
+						<div class="footer__navigation col-xs-12 col-sm-3 col-md-3 col-lg-2">
+							<h6>Press</h6>
+							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="footer__bottom">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="footer__social col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+							<h6>Follow Us</h6>
+
+							<div class-"row">
+
+								
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+		</footer>
+
+	</div>
 
 	<script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery-1.11.3.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>

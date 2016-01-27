@@ -1,6 +1,6 @@
 <?php
 /**
-	The template for displaying the HEADER until <div id="page-wrapper">
+	The template for displaying the HEADER from <div id="page-container"> until <div id="page-wrapper">
 */
 ?>
 
@@ -61,12 +61,21 @@
 
 <body <?php body_class(); ?>>
 
+	<div id="page-container">
+
 	<!--[if lt IE 7]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]--> 
 
-	<header id="header" class="">
-		
-		<nav id="navigation">
-		</nav>
+	<header id="header" class="header">
+
+		<div class="container-fluid">
+
+			<div class="header__logo col-xs 6 col-sm-3 col-md-2 col-lg-2">
+				<img src="" alt="60 Degrees" />
+			</div>
+			
+			<nav class="header__navigation col-xs-12 col-sm-9 col-md-10 col-lg-10">
+				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+			</nav>
 	
 	</header>
 	

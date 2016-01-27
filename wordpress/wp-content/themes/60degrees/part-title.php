@@ -1,10 +1,10 @@
 <?php
-/*
+/**
 The template part for displaying the PAGE section.
 */
 ?>
 				
-<section class="page">
+<section class="section__title">
 
 	<div class="container">
 	
@@ -12,7 +12,6 @@ The template part for displaying the PAGE section.
 		
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<h1><?php the_title(); ?></h1>
-				<?php the_content(); ?>
 			</div>
 			
 		</div>

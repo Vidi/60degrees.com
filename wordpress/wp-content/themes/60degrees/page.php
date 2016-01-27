@@ -9,42 +9,37 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			
 			<?php 
-			// Page 1
-			if(is_page(1)):
-				get_template_part('part', 'page'); 
-			?>
-		
-			<?php 
-			// Page 2
-			elseif(is_page(2)): 
-				get_template_part('part', 'page');
-			?>
-			
-			<?php 
+			// Jobs
+			if(is_page(9)):
+				get_template_part('part', 'title');
+				// get_template_part('part', 'jobs'); 
+				echo 'DYNAMIC JOBS CONTENT';
+
+
+			// Sectors
+			elseif(is_page(11)): 
+				get_template_part('part', 'title');
+				//get_template_part('part', 'sectors');
+				echo 'DYNAMIC SECTORS CONTENT';
+
+			// About
+			elseif(is_page(7)):
+				get_template_part('part', 'title');
+				get_template_part('part', 'two-columns');
+				get_template_part('part', 'people');
+				get_template_part('part', 'quotes');
+
+
+			// About
+			elseif(is_page(13)): 
+				get_template_part('part', 'contact');
+
+
 			// All Other Pages
 			else:
-			?>
-				
-				<section class="page">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<h1><?php the_title(); ?></h1>
-								<?php the_content(); ?>
-							</div>
-							
-						</div>
-						
-					</div>
-					
-					<div class="clearfix"></div>
-					
-				</section>
+				get_template_part('part', 'title');
+				get_template_part('part', 'one-column');
 		
-			<?php
 			endif;
 			?>
 			

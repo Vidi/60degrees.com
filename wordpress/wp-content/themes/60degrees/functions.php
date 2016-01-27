@@ -1,4 +1,7 @@
-<?php /* Functions.php */
+<?php 
+/** 
+	Actions & Filters
+*/
 
 // ACTIONS
 	add_action('login_enqueue_scripts', 'my_login_stylesheet' );
@@ -8,7 +11,9 @@
 	add_filter('login_headertitle', 'my_login_logo_url_title');
 
 
-/** Login Stylesheet */
+/** 
+	Login Stylesheet 
+*/
 
 // Custom Login Stylesheet	  
 	function my_login_stylesheet() { ?>
@@ -25,19 +30,35 @@
 	};
 
 
-/** Images */
+/** 
+	Menus
+*/
+
+// Register Header Menu
+	function register_my_menu() {
+	  register_nav_menu('header-menu',__( 'Header Menu' ));
+	  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+	}
+	add_action( 'init', 'register_my_menu' );
+
+
+/** 
+	Images 
+*/
 
 // Set post thumbnail size
 	
 	if(function_exists('add_image_size')) { 
 		// Set image size
-		add_image_size( 'profile-image', 420, 420, true);
+		add_image_size( 'carousel-image', 1920, 720, true);
 		// Dynamic image size
-		add_image_size( 'header-image', 1440, 9999, false);
+		// add_image_size( 'header-image', 1440, 9999, false);
 	};
 
 
-/** Editor */
+/** 
+	Custom Editors
+*/
 
 //Edit tiny MCE to remove elements
 	if (isset($wp_version)) {
@@ -82,7 +103,9 @@
 	}
 
 
-/** Admin Bar */
+/** 
+	Admin Bar 
+*/
 
 // Remove Admin Bar Front End
 	add_filter('show_admin_bar', '__return_false');

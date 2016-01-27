@@ -7,33 +7,15 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 	
 		<?php while ( have_posts() ) : the_post(); ?>
-				
-			<section class="page">
-			
-				<div class="container">
-				
-					<div class="row">
-					
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<h1><?php the_title(); ?></h1>
-							<?php the_content(); ?>
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="clearfix"></div>
-				
-			</section>
-			
-							
+
 			<?php
-			// Page 
-			// get_template_part('part', 'page'); 
+			// Home Page
+			get_template_part('part', 'carousel');
+			get_template_part('part', 'categories');
+			get_template_part('part', 'quotes');
+			get_template_part('part', 'posts');
 			?>
 	
-			
 		<?php endwhile; // end of the loop. ?>
 		
 	<?php endif; ?>

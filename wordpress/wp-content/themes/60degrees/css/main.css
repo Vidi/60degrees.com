@@ -92,31 +92,39 @@
 	}
 	
 		h1{
+			/* Page Title */
 			font-size:25px;
 			line-height:35px;
+			text-transform:uppercase;
 		}
 	
 		h2{
+			/* Page subtitle */
 			font-size:23px;
 			line-height:33px;
+			text-transform:uppercase;
 		}
 	
 		h3{
+			/* Page Section Title */ 
 			font-size:21px;
 			line-height:31px;
 		}
 	
 		h4{
+			/* Job Section Title */
 			font-size:19px;
 			line-height:19px;
 		}
 	
 		h5{
+			/* Job Filter Title */
 			font-size:17px;
 			line-height:17px;
 		}
 	
 		h6{
+			/* Footer Title */ 
 			font-size:15px;
 			line-height:15px;
 		}
@@ -320,7 +328,7 @@
 /* = Content
 -----------------------------------------------*/
 	
-	/* -- General ---------- */
+	/* Sections */
 	section{
 		width:100%;
 		height:auto;
@@ -330,32 +338,275 @@
 		clear:both;
 		
 		margin:0px auto;
-		padding:0px;
+		padding:15px 0px;
 		border:0px none;
 	}
-	
-		.container{
-		}
-	
-	
-	/* -- Page ---------- */
 
+
+	/* Title */
+	.section__carousel{
+		text-align:left;
+		padding:0px;
+	}
+
+	
+		.js-flexslider--carousel{
+			width:100%;
+			height:auto;
+			
+			display:block;
+			position:relative;
+			
+			margin:0px auto;
+			padding:0px;
+			border:0px none;	
+		}
+		
+			.js-flexslider--carousel ul,
+			.js-flexslider--carousel li{ 		
+				width:100%;
+				height:auto;
+				
+				display:block;
+				position:relative;
+				float:left;
+				z-index:0;
+				
+				list-style:none;
+				
+				margin:0px auto;
+				padding:0px;
+				border:0px none;
+			}
+
+			.carousel__image{
+				width:100%;
+				display:none;
+				z-index:0;
+			}
+
+			.carousel__content{
+				width:100%;
+				height:auto;
+
+				display:none;
+				position:absolute;
+				z-index:20;
+				top:0px;
+				left:0px;
+			}
+
+				.carousel__title{
+				}
+
+				.carousel__text{
+				}
+
+
+	/* Title */
+	.section__title{
+		background:#4a5e7e;
+
+		color:#FFFFFF;
+		text-align:left;
+	}
+
+
+	/* Subitle */
+	.section__subtitle{
+		text-align:center;
+		padding-bottom:0px;
+	}
+
+
+	/* One Column */
+	.section__one-column{
+		text-align:left;
+	}
+
+
+	/* Two Coolumns */
+	.section__two-columns{
+		text-align:left;
+	}
+
+	@media (min-width:768px){
+		.section__two-columns-text{
+			-webkit-column-count:2;
+			-moz-column-count:2;
+			column-count:2;
+			-webkit-column-gap:30px;
+			-moz-column-gap:30px;
+			column-gap:30px;
+		}
+	}
+
+
+	/* Quotes */
+	.section__quotes{
+		background:#000000;
+		color:#FFFFFF;
+	}
+
+
+	/* People */
+	.section__people{
+		background:#F8F8F8;
+	}
+	
+	
+	/* -- About ---------- */
 
 /* = Header
 -----------------------------------------------*/
 	
-	/* -- Header ---------- */
-	header#header{
+	/* Header */
+	.header{
+		background:#FFFFFF;
+		width:100%;
+		height:auto;
+
+		display:block;
+		position:relative;
+
+		margin:0px auto;
+		padding:15px 0px;
+		border:0px none;
 	}
+
+
+	/* Logo */
+	.header__logo{
+	}
+
+	.header__logo img{
+		width:auto;
+		max-width:100%;
+		height:auto;
+	}
+
 	
-	/* -- Navigation ---------- */
-	nav#navigation{
+	/* Navigation */
+	.header__navigation{
+	}
+
+	.header__navigation ul{
+		width:100%;
+		height:auto;
+
+		display:block;
+		position:relative;
+
+		margin:0px auto;
+		padding:0px;
+		border:0px none;
+	}
+
+	.header__navigation li{
+		width:auto;
+		height:auto;
+
+		display:block;
+		position:relative;
+		float:left;
+
+		margin:0px auto;
+		padding:0px;
+		border:0px none;
+	}
+
+	.header__navigation a{
+	}
+
+	.header__navigation li.current-menu-item a{
 	}
 		
 		
 /* = Footer
 -----------------------------------------------*/
-	
-	/* -- Header ---------- */
-	footer#footer{
+
+
+	/* Sticky Footer */
+	html, 
+	body {
+		height: 100%;
 	}
+
+	#page-container {
+		min-height: 100%;
+		margin: 0 auto -300px;
+	}
+
+	#footer-container, 
+	#push {
+		height:300px;
+	}
+
+
+	/* Footer */
+	.footer{
+		background:#202020;
+
+		width:100%;
+		height:300px;
+
+		display:block;
+		position:relative;
+
+		color:#FFFFFF;
+		text-align:left;
+
+		margin:0px auto;
+		padding:0px;
+		border:0px none;
+	}
+
+		.footer_ h6{
+		}
+
+	.footer__top{
+		width:100%;
+		height:auto;
+
+		display:block;
+		position:relative;
+
+		color:#FFFFFF;
+		text-align:left;
+
+		margin:0px auto;
+		padding:0px;
+		border:0px none;
+	}
+
+	.footer__bottom{
+		width:100%;
+		height:auto;
+
+		display:block;
+		position:relative;
+
+		color:#FFFFFF;
+		text-align:center;
+
+		margin:0px auto;
+		padding:0px;
+		border:0px none;
+	}
+
+	
+	/* Navigation */
+	.footer__navigation{
+	}
+
+	.footer__navigation ul{
+	}
+
+	.footer__navigation li{
+	}
+
+	.footer__navigation a{
+	}
+
+
+
