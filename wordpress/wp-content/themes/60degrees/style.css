@@ -15,5 +15,8 @@ Tags: Custom Theme, Bootstrap, Boilerplate, 60 Degrees Recruitment, Steve Ferrar
 /* Bootstrap */
 @import url("css/bootstrap.min.css");
 
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 /* Custom */
 @import url("css/main.css");
