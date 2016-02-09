@@ -26,18 +26,18 @@
 
 							<div class="footer__about hidden-xs col-sm-6 col-md-5 col-lg-5">
 								<h6>About</h6>
-								<?php echo get_field('footer_text',7); ?>
-								<a href="<?php echo get_permalink(7); ?>" title="Read More" class="btn btn--blue">Read More</a>
+								<p><?php echo get_field('footer_text',7); ?></p>
+								<button href="<?php echo get_permalink(7); ?>" title="Read More">Read More</button>
 							</div>
 
 						<?php endif; ?>
 
-						<div class="footer__navigation col-xs-12 col-sm-3 col-md-3 col-lg-2">
+						<div class="footer__navigation col-xxs-12 col-xs-6 col-sm-3 col-md-3 col-lg-2">
 							<h6>Company</h6>
 							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 						</div>
 
-						<div class="footer__navigation col-xs-12 col-sm-3 col-md-3 col-lg-2">
+						<div class="footer__navigation col-xxs-12 col-xs-6 col-sm-3 col-md-3 col-lg-2">
 							<h6>Press</h6>
 							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 						</div>

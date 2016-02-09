@@ -18,7 +18,7 @@ $(document).ready(function(){
     // ---------------------------------------------
 	$('.js-flexslider--carousel').flexslider({
 		animation: 'fade',
-		controlNav: false,
+		controlNav: true,
 		directionNav: false,
 		keyboard: true,
 		pauseOnHover: false,
