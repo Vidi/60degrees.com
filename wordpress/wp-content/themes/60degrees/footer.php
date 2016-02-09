@@ -58,9 +58,19 @@
 
 							<h6>Follow Us</h6>
 
-							<div class-"row">
-
-								
+							<div class="footer__bottom-social">
+								<?php if(get_field('facebook', 13)): ?>
+									<a href="<?php echo get_field('facebook', 13); ?>"><img src="<?php bloginfo('template_url'); ?>/img/facebook--ffffff.png" alt="Facebook" /></a>
+								<?php endif; ?>
+								<?php if(get_field('twitter', 13)): ?>
+									<a href="<?php echo $data->twitter; ?>"><img src="<?php bloginfo('template_url'); ?>/img/twitter--ffffff.png" alt="Twitter" /></a>
+								<?php endif; ?>
+								<?php if(get_field('linkedin', 13)): ?>
+									<a href="<?php echo $data->linkedin; ?>"><img src="<?php bloginfo('template_url'); ?>/img/linkedin--ffffff.png" alt="LinkedIn" /></a>
+								<?php endif; ?>
+								<?php if(get_field('google_plus', 13)): ?>
+									<a href="<?php echo $data->google_plus; ?>"><img src="<?php bloginfo('template_url'); ?>/img/google_plus--ffffff.png" alt="Google Plus" /></a>
+								<?php endif; ?>
 							</div>
 
 						</div>
@@ -76,6 +86,9 @@
 	<script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery-1.11.3.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+	
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 	<?php wp_footer(); ?>
 

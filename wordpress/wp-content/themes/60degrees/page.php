@@ -12,15 +12,15 @@ get_header(); ?>
 			// Jobs
 			if(is_page(9)):
 				get_template_part('part', 'title');
+				get_template_part('part', 'one-column');
 				// get_template_part('part', 'jobs'); 
-				echo 'DYNAMIC JOBS CONTENT';
 
 
 			// Sectors
 			elseif(is_page(11)): 
 				get_template_part('part', 'title');
+				get_template_part('part', 'one-column');
 				//get_template_part('part', 'sectors');
-				echo 'DYNAMIC SECTORS CONTENT';
 
 			// About
 			elseif(is_page(7)):
@@ -30,8 +30,9 @@ get_header(); ?>
 				get_template_part('part', 'quotes');
 
 
-			// About
+			// Contact
 			elseif(is_page(13)): 
+				get_template_part('part', 'title');
 				get_template_part('part', 'contact');
 
 

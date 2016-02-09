@@ -69,12 +69,19 @@
 
 		<div class="container-fluid">
 
-			<div class="header__logo col-xs 6 col-sm-3 col-md-2 col-lg-2">
-				<img src="" alt="60 Degrees" />
+			<div class="header__logo col-xs-6 col-sm-3 col-md-2 col-lg-2">
+				<img src="<?php bloginfo('template_url'); ?>/img/60Degrees.png" alt="60 Degrees" />
 			</div>
-			
-			<nav class="header__navigation hidden-xs col-sm-9 col-md-10 col-lg-10">
-				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+					
+			<div class="header__button col-xs-6 hidden-sm hidden-md hidden-lg">
+				<a href="#" class="header__button-open js-menu-open"><img src="<?php bloginfo('template_url'); ?>/img/menu.png" alt="Menu" /></a>
+			</div>
+					
+			<nav class="header__navigation js-header-navigation col-xs-12 col-sm-9 col-md-10 col-lg-10">
+				<a href="#" class="header__button-close js-menu-close hidden-sm hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/img/close.png" alt="Close" /></a>
+				<div class="header__navigation-menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+				</div>
 			</nav>
 	
 	</header>
