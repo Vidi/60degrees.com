@@ -21,25 +21,29 @@
 				<div class="container">
 
 					<div class="row">
-			
-						<?php if (get_field('footer_text',7)): ?>
 
-							<div class="footer__about hidden-xs col-sm-6 col-md-5 col-lg-5">
-								<h6>About</h6>
-								<p><?php echo get_field('footer_text',7); ?></p>
-								<button href="<?php echo get_permalink(7); ?>" title="Read More">Read More</button>
+						<div class="footer__top-inner">
+			
+							<?php if (get_field('footer_text',7)): ?>
+
+								<div class="footer__about hidden-xs col-sm-6 col-md-5 col-lg-5">
+									<h3>About</h3>
+									<p><?php echo get_field('footer_text',7); ?></p>
+									<a href="<?php echo get_permalink(7); ?>" title="Read More" class="btn btn--blue">Read More</a>
+								</div>
+
+							<?php endif; ?>
+
+							<div class="footer__navigation col-xxs-12 col-xs-6 col-sm-3 col-md-3 col-lg-2">
+								<h3>Company</h3>
+								<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-1' ) ); ?>
 							</div>
 
-						<?php endif; ?>
+							<div class="footer__navigation col-xxs-12 col-xs-6 col-sm-3 col-md-3 col-lg-2">
+								<h3>Press</h3>
+								<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-2' ) ); ?>
+							</div>
 
-						<div class="footer__navigation col-xxs-12 col-xs-6 col-sm-3 col-md-3 col-lg-2">
-							<h6>Company</h6>
-							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-						</div>
-
-						<div class="footer__navigation col-xxs-12 col-xs-6 col-sm-3 col-md-3 col-lg-2">
-							<h6>Press</h6>
-							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 						</div>
 
 					</div>
@@ -54,23 +58,27 @@
 
 					<div class="row">
 
-						<div class="footer__social col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="footer__bottom-inner">
 
-							<h6>Follow Us</h6>
+							<div class="footer__social col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-							<div class="footer__bottom-social">
-								<?php if(get_field('facebook', 13)): ?>
-									<a href="<?php echo get_field('facebook', 13); ?>"><img src="<?php bloginfo('template_url'); ?>/img/facebook--ffffff.png" alt="Facebook" /></a>
-								<?php endif; ?>
-								<?php if(get_field('twitter', 13)): ?>
-									<a href="<?php echo $data->twitter; ?>"><img src="<?php bloginfo('template_url'); ?>/img/twitter--ffffff.png" alt="Twitter" /></a>
-								<?php endif; ?>
-								<?php if(get_field('linkedin', 13)): ?>
-									<a href="<?php echo $data->linkedin; ?>"><img src="<?php bloginfo('template_url'); ?>/img/linkedin--ffffff.png" alt="LinkedIn" /></a>
-								<?php endif; ?>
-								<?php if(get_field('google_plus', 13)): ?>
-									<a href="<?php echo $data->google_plus; ?>"><img src="<?php bloginfo('template_url'); ?>/img/google_plus--ffffff.png" alt="Google Plus" /></a>
-								<?php endif; ?>
+								<h3>Follow Us</h3>
+
+								<div class="footer__bottom-social">
+									<?php if(get_field('facebook', 13)): ?>
+										<a href="<?php echo get_field('facebook', 13); ?>"><img src="<?php bloginfo('template_url'); ?>/img/facebook--ffffff.png" alt="Facebook" /></a>
+									<?php endif; ?>
+									<?php if(get_field('twitter', 13)): ?>
+										<a href="<?php echo $data->twitter; ?>"><img src="<?php bloginfo('template_url'); ?>/img/twitter--ffffff.png" alt="Twitter" /></a>
+									<?php endif; ?>
+									<?php if(get_field('linkedin', 13)): ?>
+										<a href="<?php echo $data->linkedin; ?>"><img src="<?php bloginfo('template_url'); ?>/img/linkedin--ffffff.png" alt="LinkedIn" /></a>
+									<?php endif; ?>
+									<?php if(get_field('google_plus', 13)): ?>
+										<a href="<?php echo $data->google_plus; ?>"><img src="<?php bloginfo('template_url'); ?>/img/google_plus--ffffff.png" alt="Google Plus" /></a>
+									<?php endif; ?>
+								</div>
+
 							</div>
 
 						</div>

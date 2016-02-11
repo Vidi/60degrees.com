@@ -13,7 +13,7 @@ get_header(); ?>
 			get_template_part('part', 'carousel');
 			get_template_part('part', 'categories');
 			get_template_part('part', 'quotes');
-			get_template_part('part', 'posts');
+			get_template_part('part', 'latest-news');
 			?>
 	
 		<?php endwhile; // end of the loop. ?>

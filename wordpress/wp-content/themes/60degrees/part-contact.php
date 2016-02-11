@@ -55,6 +55,7 @@ if ( function_exists('get_field') ) {
 			<div class="row">
 
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 section__contact-form">
+					<h2>Contact</h2>
 					<?php 
 					// Contact Form
 					echo do_shortcode($data->shortcode); 
@@ -62,6 +63,7 @@ if ( function_exists('get_field') ) {
 				</div>
 
 				<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 section__contact-info-social">
+					<h2>Address</h2>
 					<div class="section__contact-info">
 						<?php if(!empty($data->address)): ?>
 							<span class="section__contact-info--phone"><?php echo $data->address; ?><br /></span>

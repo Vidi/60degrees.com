@@ -31,13 +31,59 @@
 
 
 /** 
+	Read More Button
+*/
+
+// Add classes .btn and .btn--blue
+	add_filter('next_posts_link_attributes', 'posts_link_attributes');
+	add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+	function posts_link_attributes() {
+	    return 'class="btn btn--blue"';
+	}
+
+
+/** 
+	Excerpts
+*/
+
+// Excerpt Length
+	function excerpt($limit) {
+		$excerpt = explode(' ', get_the_excerpt(), $limit);
+		if (count($excerpt)>=$limit) {
+			array_pop($excerpt);
+			$excerpt = implode(" ",$excerpt).'&hellip;';
+		} else {
+			$excerpt = implode(" ",$excerpt);
+		} 
+		$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+		return $excerpt;
+	}
+
+	function content($limit) {
+		$content = explode(' ', get_the_content(), $limit);
+		if (count($content)>=$limit) {
+			array_pop($content);
+			$content = implode(" ",$content).'&hellip;';
+		} else {
+			$content = implode(" ",$content);
+		} 
+		$content = preg_replace('/\[.+\]/','', $content);
+		$content = apply_filters('the_content', $content); 
+		$content = str_replace(']]>', ']]&gt;', $content);
+		return $content;
+	}
+
+
+/** 
 	Menus
 */
 
 // Register Header Menu
 	function register_my_menu() {
 	  register_nav_menu('header-menu',__( 'Header Menu' ));
-	  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+	  register_nav_menu('footer-menu-1',__( 'Footer Menu 1' ));
+	  register_nav_menu('footer-menu-2',__( 'Footer Menu 2' ));
 	}
 	add_action( 'init', 'register_my_menu' );
 
@@ -51,6 +97,8 @@
 	if(function_exists('add_image_size')) { 
 		// Set image size
 		add_image_size( 'carousel-image', 1920, 720, true);
+		add_image_size( 'news-image', 840, 430, true);
+		add_image_size( 'quote-image', 1600, 640, true);
 		// Dynamic image size
 		// add_image_size( 'header-image', 1440, 9999, false);
 	};

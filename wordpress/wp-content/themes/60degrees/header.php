@@ -77,11 +77,18 @@
 				<a href="#" class="header__button-open js-menu-open"><img src="<?php bloginfo('template_url'); ?>/img/menu.png" alt="Menu" /></a>
 			</div>
 					
-			<nav class="header__navigation js-header-navigation col-xs-12 col-sm-9 col-md-10 col-lg-10">
+			<nav class="header__navigation js-header-navigation col-xs-12 col-sm-9 col-md-7 col-lg-6">
 				<a href="#" class="header__button-close js-menu-close hidden-sm hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/img/close.png" alt="Close" /></a>
 				<div class="header__navigation-menu">
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 				</div>
+			</nav>
+					
+			<nav class="header__buttons hidden-xs hidden-sm col-md-3 col-lg-4">
+				<ul>
+					<li><a href="<?php echo get_permalink(70); ?>" title="Sign Up" class="btn--sign-up"><i class="fa fa-user"></i><span>Sign Up</span></a></li>
+					<li><a href="<?php echo get_permalink(68); ?>" title="Register" class="btn--register"><i class="fa fa-lock"></i><span>Register</span></a></li>
+				</ul>
 			</nav>
 	
 	</header>
