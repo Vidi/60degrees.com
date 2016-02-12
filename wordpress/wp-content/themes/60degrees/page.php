@@ -26,8 +26,8 @@ get_header(); ?>
 			elseif(is_page(7)):
 				get_template_part('part', 'title');
 				get_template_part('part', 'two-columns');
-				get_template_part('part', 'people');
 				get_template_part('part', 'quotes');
+				get_template_part('part', 'people');
 
 
 			// Contact

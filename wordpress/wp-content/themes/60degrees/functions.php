@@ -99,6 +99,7 @@
 		add_image_size( 'carousel-image', 1920, 720, true);
 		add_image_size( 'news-image', 840, 430, true);
 		add_image_size( 'quote-image', 1600, 640, true);
+		add_image_size( 'people-image', 320, 320, true);
 		// Dynamic image size
 		// add_image_size( 'header-image', 1440, 9999, false);
 	};

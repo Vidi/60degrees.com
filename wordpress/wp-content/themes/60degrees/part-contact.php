@@ -13,6 +13,7 @@ if ( function_exists('get_field') ) {
 	
 	$data->shortcode = '[contact-form-7 id="6" title="Contact"]';
 
+	$data->intro = get_field('intro');
 	$data->address = get_field('address');
 	$data->phone = get_field('phone');
 	$data->email = get_field('email');
@@ -63,24 +64,31 @@ if ( function_exists('get_field') ) {
 				</div>
 
 				<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 section__contact-info-social">
+					
 					<h2>Address</h2>
+					
 					<div class="section__contact-info">
+						<?php if(!empty($data->intro)): ?>
+							<p><?php echo $data->address; ?></p>
+						<?php endif; ?>
+
 						<?php if(!empty($data->address)): ?>
-							<span class="section__contact-info--phone"><?php echo $data->address; ?><br /></span>
+							<p><span class="section__contact-info--address"><i class="fa fa-map-marker"></i><?php echo $data->address; ?></span></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->phone)): ?>
-							<br /><span class="section__contact-info--phone"><?php echo $data->phone; ?></span>
+							<p><span class="section__contact-info--phone"><i class="fa fa-phone"></i><?php echo $data->phone; ?></span></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->email)): ?>
-							<br /><span class="section__contact-info--email"><a href="mailto:<?php echo $data->email; ?>"><?php echo $data->email; ?></a></span>
+							<p><span class="section__contact-info--email"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $data->email; ?>"><?php echo $data->email; ?></a></span></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->website)): ?>
-							<br /><span class="section__contact-info--website"><a href="<?php echo $data->websiteURL; ?>"><?php echo $data->website; ?></a></span>
+							<p><span class="section__contact-info--website"><i class="fa fa-globe"></i><a href="<?php echo $data->websiteURL; ?>"><?php echo $data->website; ?></a></span></p>
 						<?php endif; ?>
 					</div>
+
 					<div class="section__contact-social">
 						<?php if(!empty($data->facebook)): ?>
 							<a href="<?php echo $data->facebook; ?>"><img src="<?php bloginfo('template_url'); ?>/img/facebook--000000.png" alt="Facebook" /></a>
@@ -95,6 +103,7 @@ if ( function_exists('get_field') ) {
 							<a href="<?php echo $data->google_plus; ?>"><img src="<?php bloginfo('template_url'); ?>/img/google_plus--000000.png" alt="Google Plus" /></a>
 						<?php endif; ?>
 					</div>
+
 				</div>
 				
 			</div>

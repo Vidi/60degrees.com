@@ -70,7 +70,9 @@
 		<div class="container-fluid">
 
 			<div class="header__logo col-xs-6 col-sm-3 col-md-2 col-lg-2">
-				<img src="<?php bloginfo('template_url'); ?>/img/60Degrees.png" alt="60 Degrees" />
+				<a href="<?php echo home_url(); ?>" title="60 Degrees">
+					<img src="<?php bloginfo('template_url'); ?>/img/60Degrees.png" alt="60 Degrees" />
+				</a>
 			</div>
 					
 			<div class="header__button col-xs-6 hidden-sm hidden-md hidden-lg">

@@ -948,7 +948,7 @@
 					width:auto;
 					max-width:100%;
 					height:auto;
-					border:1px solid #DDDDDD;
+					border:1px solid #F2F2F2;
 				}
 
 				.section__latestnews-post-title{
@@ -972,9 +972,134 @@
 
 
 	/* People */
-	.section__people{
+	.people{
 		background:#F8F8F8;
+		padding:50px olx;
 	}
+
+	.people__title{
+		text-align:left;
+	}
+
+	.people__title:after{
+		content:'';
+
+		background:#222222;
+
+		width:50px;
+		height:4px;
+
+		display:block;
+		clear:both;
+
+		margin-top:25px;
+		margin-bottom:25px;
+		padding:0px;
+		border:0px none;
+	}
+
+	.people__people{
+		margin:15px auto;
+	}
+
+		.people__person{
+			margin:15px auto;
+		}
+
+		@media screen and (max-width:767px){
+			.people__person:nth-child(2n+1){
+				clear:both;
+			}
+		}
+
+		@media screen and (max-width:767px){
+			.people__person:nth-child(2n+1){
+				clear:both;
+			}
+		}
+
+		@media screen and (max-width:768px) and (max-width:991px){
+			.people__person:nth-child(3n+1){
+				clear:both;
+			}
+		}
+
+		@media screen and (min-width:992px) and (max-width:1199px){
+			.people__person:nth-child(4n+1){
+				clear:both;
+			}
+		}
+			.people__person-inner{
+				background:#FFFFFF;
+				padding:25px;
+			}
+
+				.people__person-image{
+					overflow:hidden;
+
+					max-width:320px;
+					max-height:320px;
+
+					display:inline-block;
+
+					border:1px solid #F4F4F4;
+
+					-webkit-border-radius:50%;
+					-moz-border-radius:50%;
+					border-radius:50%;
+				}
+
+					.people__person-image img{
+						width:auto;
+						max-width:100%;
+						height:auto;
+
+					}
+
+				.people__person-title{}
+
+					.people__person-name{
+						margin-bottom:0px;
+					}
+
+					.people__person-job{
+						font-weight:bold;
+						margin-top:0px;
+						margin-bottom:5px;
+					}
+
+				.people__person-biography{
+				    font-size: 12px;
+				    line-height: 21px;
+				}
+
+				.people__person-social{
+					text-align:center;
+					margin:25px 0px 0px 2px;
+				}
+
+					.people__person-social a{
+						background:#F2F2F2;
+
+						width:32px;
+						height:32px;
+
+						display:inline-block;
+						position:relative;
+
+						margin:0px 2px 0px 0px;
+						padding:3px;
+						border:0px none;
+
+						overflow: hidden;-webkit-border-radius: 50%;
+						-moz-border-radius: 50%;
+						border-radius: 50%;
+					}
+
+						.people__person-social img{
+							width:24px;
+							height:24px;
+						}
 
 	
 /* -- News ---------- */
@@ -1039,14 +1164,33 @@
 		.section__contact-info{
 			background:#F8F8F8;
 			text-align:left;
-			padding:25px;
+			padding:15px 25px;
 		}
 
-			.section__contact-info-phone{}
+			.section__contact-info p{
+				margin:10px auto;
+					opacity:0.75;
+			}
 
-			.section__contact-info-email{}
+				.section__contact-info i{
+					position:absolute;
+					left:-0px;
+					top:5px;
+				}
 
-			.section__contact-info-website{}
+				.section__contact-info span{
+					padding-left:22px;
+					display:inline-block;
+					position:relative;
+				}
+
+				.section__contact-info-address{}
+
+				.section__contact-info-phone{}
+
+				.section__contact-info-email{}
+
+				.section__contact-info-website{}
 
 
 		/* Social */
