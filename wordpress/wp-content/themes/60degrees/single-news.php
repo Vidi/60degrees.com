@@ -8,7 +8,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 				
-			<section class="section__title">
+			<section class="title">
 
 				<div class="container">
 				
@@ -26,7 +26,7 @@ get_header(); ?>
 				
 			</section>
 
-			<section class="section__news">
+			<section class="news">
 
 				<div class="container">
 
@@ -35,12 +35,12 @@ get_header(); ?>
 						<!-- Post Content -->
 						<article class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
 								
-							<div class="section__news-image">
+							<div class="news__image">
 								<?php $image = wp_get_attachment_image_src(get_field('image'), 'news-image'); ?>
 								<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(); ?>" />
 							</div>
 								
-							<div class="section__news-text">
+							<div class="news__text">
 								<h2><?php echo get_the_title(); ?></h2>
 								<?php the_content(); ?>
 							</div>

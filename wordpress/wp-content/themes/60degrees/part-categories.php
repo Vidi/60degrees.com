@@ -8,7 +8,7 @@ The template part for displaying the CATEGORIES section.
 if(get_field('categories')):
 ?>
 			
-	<section class="section__categories">
+	<section class="categories">
 
 		<div class="container">
 		
@@ -18,13 +18,13 @@ if(get_field('categories')):
 
 					<h4 class="text-left">Popular Categories</h4>
 
-						<div class="section__categories-container">
+						<div class="categories__container">
 
 						<?php
 						while(has_sub_field('categories')):
 						?>
 
-							<div class="col-xxs-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 section__categories-category">
+							<div class="col-xxs-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 categories__category">
 								<a href="<?php echo get_sub_field('link'); ?>">
 									<i class="fa fa-<?php echo get_sub_field('Icon'); ?>"></i>
 									<span><?php echo get_sub_field('name'); ?></span>

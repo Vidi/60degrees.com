@@ -9,9 +9,9 @@ $background = wp_get_attachment_image_src(get_field('background'), 'quote-image'
 
 <?php if(get_field('quotes')): ?>
 			
-	<section class="section__quotes" style="background-image:url('<?php echo $background[0]; ?>');">
+	<section class="quotes" style="background-image:url('<?php echo $background[0]; ?>');">
 
-		<div class="section__quotes-inner js-flexslider--quotes">
+		<div class="quotes__inner js-flexslider--quotes">
 
 			<div class="container">
 			

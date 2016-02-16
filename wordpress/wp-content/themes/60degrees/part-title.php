@@ -4,7 +4,7 @@ The template part for displaying the PAGE section.
 */
 ?>
 				
-<section class="section__title">
+<section class="title">
 
 	<div class="container">
 	

@@ -9,7 +9,7 @@ $count = 0;
 
 	<?php if ( have_posts() ) : ?>
 				
-			<section class="section__title">
+			<section class="title">
 
 				<div class="container">
 				
@@ -27,7 +27,7 @@ $count = 0;
 				
 			</section>
 
-			<section class="section__news">
+			<section class="news">
 
 				<div class="container">
 
@@ -42,22 +42,22 @@ $count = 0;
 								while( have_posts()): the_post(); 
 								?>
 
-									<div class="section__news-post js-posts__content">
+									<div class="news__post js-posts__content">
 										
 										<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 												
-											<div class="section__news-image">
+											<div class="news__image">
 												<?php $image = wp_get_attachment_image_src(get_field('image'), 'news-image'); ?>
 												<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
 													<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(); ?>" />
 												</a>
 											</div>
 												
-											<div class="section__news-text">
+											<div class="news__text">
 												<h4>
 													<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></a>
 												</h4>
-												<p class="section__news-excerpt">
+												<p class="news__excerpt">
 													<?php 
 													if(has_excerpt()): 
 														echo get_the_excerpt(); 
@@ -66,7 +66,7 @@ $count = 0;
 													endif;
 													?>
 												</p>
-												<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="section__news-button btn btn--blue">Read More</a>
+												<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="news__button btn btn--blue">Read More</a>
 											</div>
 
 										</article>
@@ -89,9 +89,9 @@ $count = 0;
 								if($count > ($cms_posts_per_page - 1) ): 
 								?>
 
-									<div class="row posts__loadmore-button js-posts__load">
+									<div class="posts__loadmore-button js-posts__load">
 										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-											<div class="section__news-navigation">
+											<div class="news__navigation">
 												<?php next_posts_link('Load More Articles'); ?>
 											</div>
 										</div>

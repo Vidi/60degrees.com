@@ -6,7 +6,7 @@ The template part for displaying the CAROUSEL section.
 	
 <?php if(get_field('carousel')): ?>
 			
-	<section class="section__carousel js-flexslider--carousel">
+	<section class="carousel js-flexslider--carousel">
 						
 		<ul class="slides">
 

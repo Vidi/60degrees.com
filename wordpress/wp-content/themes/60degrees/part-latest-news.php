@@ -14,8 +14,8 @@ $news = new WP_Query(
 	
 <?php if( $news->have_posts() ): ?>
 				
-	<section class="section__latestnews">
-	<div class="section__latestnews-inner">
+	<section class="latestnews">
+	<div class="latestnews__inner">
 
 		<div class="container">
 		
@@ -25,7 +25,7 @@ $news = new WP_Query(
 				<h4>Latest News</h4>
 			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section__latestnews-posts">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 latestnews__posts">
 		
 				<div class="row">
 				
@@ -33,14 +33,14 @@ $news = new WP_Query(
 						
 						<?php $image = wp_get_attachment_image_src(get_field('image'), 'news-image'); ?>
 
-						<article class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4 section__latestnews-post">
+						<article class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4 latestnews__post">
 
 							<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-								<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(); ?>" class="section__latestnews-post-image" />
-								<h6 class="section__latestnews-post-title"><?php echo get_the_title(); ?></h6>
+								<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(); ?>" class="latestnews__post-image" />
+								<h6 class="latestnews__post-title"><?php echo get_the_title(); ?></h6>
 							</a>
 							
-							<p class="section__latestnews-post-excerpt text--small">
+							<p class="latestnews__post-excerpt text--small">
 								<?php 
 								if(has_excerpt()): 
 									echo get_the_excerpt(); 
@@ -50,7 +50,7 @@ $news = new WP_Query(
 								?>
 							</p>
 
-							<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="section__latestnews-post-button btn btn--blue">Read More</a>
+							<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="latestnews__post-button btn btn--blue">Read More</a>
 							
 						</article>
 

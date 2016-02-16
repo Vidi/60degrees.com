@@ -34,7 +34,7 @@ if ( function_exists('get_field') ) {
 	
 <?php // if(get_field('people')): ?>
 
-	<section class="section__contact">
+	<section class="contact">
 
 		<div class="container">
 
@@ -44,7 +44,7 @@ if ( function_exists('get_field') ) {
 			?>
 		
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section__contact-map">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact__map">
 						<div id="google_map" data-lat="<?php echo $data->locationLat; ?>" data-lng="<?php echo $data->locationLng; ?>" data-url="<?php echo $data->locationURL; ?>"></div>
 					</div>
 				</div>
@@ -55,7 +55,7 @@ if ( function_exists('get_field') ) {
 		
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 section__contact-form">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 contact__form">
 					<h2>Contact</h2>
 					<?php 
 					// Contact Form
@@ -63,33 +63,33 @@ if ( function_exists('get_field') ) {
 					?>
 				</div>
 
-				<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 section__contact-info-social">
+				<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 contact__info-social">
 					
 					<h2>Address</h2>
 					
-					<div class="section__contact-info">
+					<div class="contact__info">
 						<?php if(!empty($data->intro)): ?>
 							<p><?php echo $data->address; ?></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->address)): ?>
-							<p><span class="section__contact-info--address"><i class="fa fa-map-marker"></i><?php echo $data->address; ?></span></p>
+							<p><span class="contact__info--address"><i class="fa fa-map-marker"></i><?php echo $data->address; ?></span></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->phone)): ?>
-							<p><span class="section__contact-info--phone"><i class="fa fa-phone"></i><?php echo $data->phone; ?></span></p>
+							<p><span class="contact__info--phone"><i class="fa fa-phone"></i><?php echo $data->phone; ?></span></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->email)): ?>
-							<p><span class="section__contact-info--email"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $data->email; ?>"><?php echo $data->email; ?></a></span></p>
+							<p><span class="contact__info--email"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $data->email; ?>"><?php echo $data->email; ?></a></span></p>
 						<?php endif; ?>
 
 						<?php if(!empty($data->website)): ?>
-							<p><span class="section__contact-info--website"><i class="fa fa-globe"></i><a href="<?php echo $data->websiteURL; ?>"><?php echo $data->website; ?></a></span></p>
+							<p><span class="contact__info--website"><i class="fa fa-globe"></i><a href="<?php echo $data->websiteURL; ?>"><?php echo $data->website; ?></a></span></p>
 						<?php endif; ?>
 					</div>
 
-					<div class="section__contact-social">
+					<div class="contact__social">
 						<?php if(!empty($data->facebook)): ?>
 							<a href="<?php echo $data->facebook; ?>"><img src="<?php bloginfo('template_url'); ?>/img/facebook--000000.png" alt="Facebook" /></a>
 						<?php endif; ?>

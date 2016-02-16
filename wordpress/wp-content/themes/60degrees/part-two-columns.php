@@ -5,11 +5,11 @@ The template part for displaying the Two COLUMN section.
 ?>
 	
 				
-<section class="section__two-columns">
+<section class="two-columns">
 	
 	<?php if(get_field('subtitle')): ?>
 
-		<div class="section__subtitle">
+		<div class="subtitle">
 
 			<div class="container">
 			
@@ -31,7 +31,7 @@ The template part for displaying the Two COLUMN section.
 	
 		<div class="row">
 		
-			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section__two-columns-text">
+			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 two-columns__text">
 				<?php the_content(); ?>
 			</article>
 			
