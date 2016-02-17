@@ -19,6 +19,7 @@ get_header(); ?>
 			// Sectors
 			elseif(is_page(11)): 
 				get_template_part('part', 'title');
+				get_template_part('part', 'categories');
 				get_template_part('part', 'one-column');
 				//get_template_part('part', 'sectors');
 

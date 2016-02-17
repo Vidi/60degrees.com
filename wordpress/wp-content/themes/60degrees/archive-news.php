@@ -108,7 +108,7 @@ $count = 0;
 
 						<!-- Post Sidebar -->
 						<aside class="hidden-xs col-sm-4 col-md-4 col-lg-3">
-							<?php get_template_part('part', 'sidebar'); ?>
+							<?php get_template_part('part', 'news-sidebar'); ?>
 						</aside>
 
 					</div>
