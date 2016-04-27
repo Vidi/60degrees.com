@@ -3,6 +3,12 @@
 The template part for displaying the JOBS SIDEBAR.
 */
 ?>
+
+<div class="jobs__filters">
+	<div id="react__locfilter"></div>
+</div>
+
+
 <form class="jobs__filters">
 
 	<div class="jobs__filter jobs__filter--checkboxes">

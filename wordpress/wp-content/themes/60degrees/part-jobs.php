@@ -13,9 +13,9 @@ The template part for displaying the JOBS section.
 			<!-- Jobs Content -->
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
 
-				<div class="jobs__articles">
+				<div class="jobs__articles" id="react__jobs-container">
 
-
+					<?php /* ?>
 					<!-- Article -->
 					<article>
 						<a href="#" class="job__thumbnail">
@@ -204,7 +204,7 @@ The template part for displaying the JOBS section.
 							<p class="job__details-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus&hellip;</p>
 						</div>
 					</article>
-
+					<?php */ ?>
 
 				</div>
 

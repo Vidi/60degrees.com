@@ -110,6 +110,8 @@ var MainApp = {
 	},
 	
 	createSelectors : function() {
+		// console.log('uh?');
+		
 		jQuery('#js-remove-odds').on('click', { index : 1, n : 2}, MainApp.removeNFromResults);
 		jQuery('#js-remove-evens').on('click', { index : 0, n : 2}, MainApp.removeNFromResults);
 		jQuery('#js-reset-state').on('click', CurrentState.resetState);
@@ -120,7 +122,7 @@ var MainApp = {
 			console.log(Filters.getState());
 		});
 		
-		jQuery('#locFilters').on('click', '#filterByLoc', MainApp.locFilter);
+		jQuery('#react__locfilter').on('click', '#filterByLoc', MainApp.locFilter);
 	},
 	
 	locFilter : function(e) {
@@ -252,9 +254,11 @@ var MainApp = {
 		
 		$.ajax({
 			type : 'GET',
-			url : 'http://www.steveferrar.com/60degrees.com/ddogg/testdata.json',
+			// url : 'http://www.steveferrar.com/60degrees.com/ddogg/testdata.json',
 			// url : 'http://localhost:81/60degrees/testdata.json',
 			// url : 'http://www.mycompas.com/staff/jsonjobsv3.aspx?ID=' + rssId + '&proc=getalljobs', /*  + '&refloc=' + refLoc */
+			url : 'http://localhost:81/60degrees.com/wordpress/wp-content/themes/60degrees/data/testdata.json',
+			
 			cache : false,
 			contentType : 'application/json',
 			dataType : 'json',
@@ -299,10 +303,7 @@ var Jobcontainer = React.createClass({
 	
 	render: function() {
 		return (
-			<div className="jobsBox">
-				<h2>Jobs</h2>
-				<JobsList data={this.state.data} />
-			</div>
+			<JobsList data={this.state.data} />
 		);
 	}
 });
@@ -316,7 +317,7 @@ var JobsList = React.createClass({
 		});
 		
 		return (
-			<div className="jobList">
+			<div>
 				{jobNode}
 			</div>
 		);
@@ -324,20 +325,36 @@ var JobsList = React.createClass({
 });
 
 var Job = React.createClass({
+	jobTypeCheck : function() {
+		if(this.props.data.JobType === 'Temporary') {
+			return <span className="temporary">{this.props.data.JobType}</span>;
+		} else if(this.props.data.JobType === 'Part Time') {
+			return <span className="part-time">{this.props.data.JobType}</span>;
+		} else {
+			return <span className="full-time">{this.props.data.JobType}</span>;
+		};
+	},
+	
 	render : function() {
 		var classes = "job-" + this.props.data.JobID;
 		
 		return (
-			<div className={classes}>
-				<h3>{this.props.data.Name}</h3>
-				<strong>{this.props.data.JobDate}</strong><br />
-				<em>{this.props.data.JobType}</em><br />
-				{this.props.data.JobCity}, {this.props.data.JobState}, {this.props.data.JobCountry}<br />
-				Pay range: {this.props.data.PayMin} - {this.props.data.PayMax}<br /><br />
-				
-				{this.props.data.JobDesc_HTML}
-				<hr />
-			</div>
+			<article className={classes}>
+				<a href="#" className="job__thumbnail">
+					<img src="http://placehold.it/250x250" alt="" />
+				</a>
+				<div className="job__details">
+					<h4 className="job__details-title">
+						<a href="#">{this.props.data.Name}</a>
+						{this.jobTypeCheck()}
+					</h4>
+					<p className="job__details-meta">
+						<a href="#" className="job__details-company"><i className="fa fa-suitcase" aria-hidden="true"></i> {this.props.data.Region}</a>
+						<a href="#" className="job__details-location"><i className="fa fa-map-marker" aria-hidden="true"></i> {this.props.data.JobCity}, {this.props.data.JobState}, {this.props.data.JobCountry}</a>
+					</p>
+					<p className="job__details-description">{this.props.data.JobDesc_TEXT}</p>
+				</div>
+			</article>
 		);
 	}
 });
@@ -364,8 +381,8 @@ var LocationFilterContainer = React.createClass({
 	
 	render : function() {
 		return (
-			<div className="locFilterList">
-				<h3>Location</h3>
+			<div className="jobs__filter locFilterList">
+				<h5>Location</h5>
 				<LocationFilterList data={this.state.data} />
 			</div>
 		);
@@ -382,9 +399,8 @@ var LocationFilterList = React.createClass({
 		
 		return (
 			<form id="locFilterListForm">
-				<button id="filterByLoc">Filter</button>
 				{locFilterNode}
-				
+				<button id="filterByLoc">Filter</button>
 			</form>
 		);
 	}
@@ -397,18 +413,18 @@ var LocationFilters = React.createClass({
 		// console.log(this.props.data);
 		
 		return (
-			<label><input type="checkbox" className={classes} name="location" value={this.props.data.location} /> {this.props.data.location}</label>
+			<span><input type="checkbox" className={classes} id={classes} name="location" value={this.props.data.location} /><label htmlFor={classes}>{this.props.data.location}</label></span>
 		);
 	}
 });
 
 ReactDOM.render(
 	<Jobcontainer pollInterval="10000" />,
-	document.getElementById('container')
+	document.getElementById('react__jobs-container')
 );
 ReactDOM.render(
 	<LocationFilterContainer pollInterval="10000" />,
-	document.getElementById('locFilters')
+	document.getElementById('react__locfilter')
 );
 
 // Helper functions
