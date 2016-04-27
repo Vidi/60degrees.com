@@ -208,6 +208,12 @@ class CFDBViewWhatsInDB extends CFDBView {
                 <form name="exportcsv" action="<?php echo $_SERVER['REQUEST_URI']?>">
                     <input type="hidden" name="unbuffered" value="true"/>
                     <select size="1" name="enc">
+                        <option id="xlsx" value="xlsx">
+                            <?php echo htmlspecialchars(__('Excel .xlsx', 'contact-form-7-to-database-extension')); ?>
+                        </option>
+                        <option id="ods" value="ods">
+                            <?php echo htmlspecialchars(__('OpenDocument .ods', 'contact-form-7-to-database-extension')); ?>
+                        </option>
                         <option id="IQY" value="IQY">
                             <?php echo htmlspecialchars(__('Excel Internet Query', 'contact-form-7-to-database-extension')); ?>
                         </option>
@@ -236,7 +242,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                             <?php echo htmlspecialchars(__('JSON', 'contact-form-7-to-database-extension')); ?>
                         </option>
                     </select>
-                    <input name="exportButton" type="button"
+                    <input id="exportButton" name="exportButton" type="button"
                            value="<?php echo htmlspecialchars(__('Export', 'contact-form-7-to-database-extension')); ?>"
                            onclick="exportData(this.form.elements['enc'])"/>
                     <span style="font-size: x-small;"><br /><?php echo '<a href="admin.php?page=' . $plugin->getShortCodeBuilderPageSlug() . '">' .
@@ -250,7 +256,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                     <input name="form_name" type="hidden" value="<?php echo $currSelectionEscaped ?>"/>
                     <input name="all" type="hidden" value="y"/>
                     <?php wp_nonce_field(); ?>
-                    <input name="cfdbdel" type="submit"
+                    <input id="cfdbdeleteall" name="cfdbdel" type="submit"
                            value="<?php echo htmlspecialchars(__('Delete All This Form\'s Records', 'contact-form-7-to-database-extension')); ?>"
                            onclick="return confirm('<?php echo htmlspecialchars(__('Are you sure you want to delete all the data for this form?', 'contact-form-7-to-database-extension')); ?>')"/>
                 </form>
@@ -258,7 +264,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                     <form action="<?php echo $_SERVER['REQUEST_URI']?>" method="post">
                         <input name="form_name" type="hidden" value="<?php echo $currSelectionEscaped ?>"/>
                         <?php wp_nonce_field(); ?>
-                        <input name="delete_wpcf7" type="submit"
+                        <input id="delete_wpcf7" name="delete_wpcf7" type="submit"
                                value="<?php echo htmlspecialchars(__('Remove _wpcf7 columns', 'contact-form-7-to-database-extension')) ?>"/>
                     </form>
                 <?php } ?>
@@ -327,7 +333,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                 ?>
         <form action="<?php echo $_SERVER['REQUEST_URI']?>" method="post">
             <input name="form_name" type="hidden" value="<?php echo $currSelectionEscaped ?>"/>
-                <input name="cfdbdel" type="hidden" value="rows"/>
+                <input id="cfdbdelete" name="cfdbdel" type="hidden" value="rows"/>
                 <?php wp_nonce_field(); ?>
                 <?php
 
@@ -393,6 +399,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                         <a target="_ninjaforms" href="https://wordpress.org/plugins/ninja-forms/">Ninja Forms (BETA)</a>,
                         <a target="_caldera" href="https://wordpress.org/plugins/caldera-forms/">Caldera Forms (BETA)</a>
                         <a target="_cf2" href="https://wordpress.org/plugins/cforms2/">CFormsII Forms (BETA)</a>
+                        <a target="_fcraft" href="http://codecanyon.net/item/formcraft-premium-wordpress-form-builder/5335056">FormCraft Premium (BETA)</a>
                     </span>
                 </td>
             </tr>
