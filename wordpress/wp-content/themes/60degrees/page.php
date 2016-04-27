@@ -9,16 +9,10 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			
 			<?php 
-			// Jobs
-			if(is_page(9)):
-				get_template_part('part', 'title');
-				get_template_part('part', 'one-column');
-				// get_template_part('part', 'jobs'); 
-
-
 			// Sectors
-			elseif(is_page(11)): 
+			if(is_page(11)): 
 				get_template_part('part', 'title');
+				get_template_part('part', 'categories');
 				get_template_part('part', 'one-column');
 				//get_template_part('part', 'sectors');
 
@@ -28,6 +22,18 @@ get_header(); ?>
 				get_template_part('part', 'two-columns');
 				get_template_part('part', 'quotes');
 				get_template_part('part', 'people');
+
+
+			// Jobs
+			elseif(is_page(9)): 
+				get_template_part('part', 'title');
+				get_template_part('part', 'jobs');
+
+
+				// Job Article
+				elseif(is_page(93)): 
+					get_template_part('part', 'title');
+					get_template_part('part', 'jobs-single');
 
 
 			// Contact

@@ -16,9 +16,11 @@ if(get_field('categories')):
 
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-					<h4 class="text-left">Popular Categories</h4>
+					<?php if(is_front_page()): ?>
+						<h4 class="text-left">Popular Categories</h4>
+					<?php endif; ?>
 
-						<div class="categories__container">
+					<div class="categories__container">
 
 						<?php
 						while(has_sub_field('categories')):
@@ -39,17 +41,19 @@ if(get_field('categories')):
 
 					</div>
 
-				<button class="btn btn--blue">Browse All Categories</button>
+					<?php if(is_front_page()): ?>
+						<button class="btn btn--blue">Browse All Categories</button>
+					<?php endif; ?>
+
+				</div>
 
 			</div>
 
 		</div>
 
-	</div>
-
-	<div class="clearfix"></div>
-	
-</section>
+		<div class="clearfix"></div>
+		
+	</section>
 
 <?php
 endif;

@@ -80,7 +80,6 @@
 	h4,
 	h5,
 	h6{
-		color:#4a5e7e;
 		font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 		font-size:25px;
 		font-style:normal;
@@ -93,30 +92,42 @@
 	
 		h1,
 		h2{
-			/* Page Subtitle */
+			/* Page Title / Subtitle */
+			color:#4a5e7e;
 			font-weight:bold;
 			text-transform:uppercase;
 		}
 	
-		h3,
-		h4{
-			/* Footer Title */ 
+		h3{
+			/* Footer Title */
 			font-size:20px;
 			line-height:28px;
 		}
 
 		h4{
+			/* Job Title */
+			font-size:20px;
 			font-weight:bold;
+			line-height:28px;
 		}
 	
 		h5,
 		h6{
+			/* Job Sidebar */
 			font-size:15px;
+			line-height:23px;
+		}
+	
+		h5{
+			/* Job Sidebar */
+			font-size:15px;
+			font-weight:bold;
 			line-height:23px;
 		}
 
 		h6{
-			font-weight:bold;
+			font-size:15px;
+			line-height:23px;
 		}
 	
 	p{
@@ -390,6 +401,100 @@
 	form img.ajax-loader{
 		padding-left:15px;
 	}
+
+
+	/* Radio Buttons */
+	input[type="checkbox"],
+	input[type="radio"]  {
+		display:none;
+	}
+
+	input[type="checkbox"] + label:before {
+		display:inline-block;
+		width:19px;
+		height:19px;
+		margin:-1px 4px 0 0;
+		vertical-align:middle;
+		background:url('../img/checkbox-radio.png') left top no-repeat;
+		cursor:pointer;
+		content:'';
+	}
+
+	input[type="checkbox"]:checked + label:before {
+		background:url('../img/checkbox-radio.png') -19px top no-repeat;
+	}
+
+	input[type="radio"] + label:before {
+		display:inline-block;
+		width:19px;
+		height:19px;
+		margin:-1px 4px 0 0;
+		vertical-align:middle;
+		background:url('../img/checkbox-radio.png') -38px top no-repeat;
+		cursor:pointer;
+		content:'';
+	}
+
+	input[type="radio"]:checked + label:before {
+		background:url('../img/checkbox-radio.png') -57px top no-repeat;
+	}
+
+
+	/* Select */
+	
+	.styled-select {
+		background:url('../img/arrow-dropdown.png') no-repeat center right #FFFFFF;
+		background-size:46px 46px;
+		
+		width:100%;
+		height:36px;
+		
+		display:block;
+		position:relative;
+		overflow:hidden;
+		
+		margin:0px auto 13px;
+		padding:0px;
+		border:0px none;
+	}
+	@media only screen and (min--moz-device-pixel-ratio: 2),
+	only screen and (-o-min-device-pixel-ratio: 2/1),
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+		.styled-select {
+			background-image:url('../img/arrow-dropdown@2x.png');
+		}
+	}
+	
+		.styled-select select{
+			background:transparent;
+			
+			width:110%;
+			height:34px;
+			
+			display:block;
+			position:relative;
+		
+			color:#000000;
+		   
+			margin:0px auto;
+			padding:0px 46px 0px 10px;
+			border:0px none;
+			border-radius:0;
+			
+			-webkit-appearance:none;
+	
+			-webkit-box-shadow:none;
+			-moz-box-shadow:none;
+			box-shadow:none;
+		}
+		.styled-select select:focus{
+			outline:none;
+	
+			-webkit-box-shadow:none;
+			-moz-box-shadow:none;
+			box-shadow:none;
+		}
 
 
 	/* Messages */
@@ -1128,6 +1233,198 @@
 			padding-top:35px;
 			border-top:1px solid #DDDDDD;
 		}
+
+	
+/* -- Jobs ---------- */
+
+
+	/* Job Archive */
+	.jobs{
+		text-align:left;
+	}
+
+
+		/* Articles */
+		.jobs__articles{
+			text-align:left;
+		}
+
+
+			.jobs article{
+				width:100%;
+				height:auto;
+
+				display:block;
+				position:relative;
+				clear:both;
+
+				margin:0px auto 30px;
+				padding:0px 0px 15px;
+				border:0px none;
+				border-bottom:1px solid #EEEEEE;
+			}
+
+				/* Thumbnail */
+				.job__thumbnail{
+					width:75px;
+					height:auto;
+
+					display:block;
+					position:absolute;
+					top:5px;
+					left:0px;
+					z-index:10;
+
+					margin:0px auto;
+					padding:0px;
+					border:0px none;
+				}
+
+				@media screen and (min-width:480px){
+					.job__thumbnail{
+						width:100px;
+						height:auto;
+					}
+				}
+
+					.job__thumbnail img{
+						width:auto;
+						max-width:100%;
+						height:auto;
+						margin:0px auto;
+						border:1px solid #DDDDDD;
+					}
+
+
+				/* Details */
+				.job__details{
+					width:100%;
+					height:auto;
+
+					display:block;
+					position:relative;
+					z-index:0;
+
+					margin:0px auto;
+					padding:0px 0px 0px 90px;
+					border:0px none;
+				}
+
+				@media screen and (min-width:480px){
+					.job__details{
+						padding-left:130px;
+					}
+				}
+
+					.job__details-title{
+						margin-bottom:7.5px;
+					}
+
+						.job__details-title a{
+							display:inline-block;
+							margin-right:10px;
+						}
+
+						.job__details-title span{
+							background:#CCCCCC;
+							display:inline-block;
+							color:#FFFFFF;
+							font-size:9px;
+							text-transform:uppercase;
+							margin:-5px auto 0px;
+							padding:0px 10px;
+						}
+
+							.job__details-title span.full-time{
+								background:#4a5e7e;
+							}
+
+							.job__details-title span.part-time{
+								background:#414B25;
+							}
+
+							.job__details-title span.temporary{
+								background:#8B655F;
+							}
+
+					.job__details-meta{
+						color:#666666;
+						font-size:13px;
+						line-height:21px;
+						margin:7.5px auto;
+					}
+
+						.job__details-meta a{
+							display:inline-block;
+							margin-right:25px;
+						}
+
+							.job__details-meta a i{
+								color:#CCCCCC;
+								margin-right:5px;
+							}
+
+					.job__details-description{
+						margin-top:7.5px;
+					}
+
+
+		/* Navigation */
+		.jobs__navigation{
+			text-align:center;
+		}
+
+			.jobs__navigation a{
+				width:49.5%;
+				display:inline-block;
+				padding:0px 10px;
+			}
+
+			.jobs__navigation a.jobs__navigation-prev{
+				text-align:left;
+			}
+
+			.jobs__navigation a.jobs__navigation-next{
+				text-align:right;
+			}
+
+				.jobs__navigation a i{
+					display:inline-block;
+					padding:0px 5px;
+				}
+
+
+		/* Filter */
+		.jobs__sidebar{
+		}
+
+			.jobs__filters{
+				background:#4A5E7E;
+
+				width:100%;
+				height:auto;
+
+				display:block;
+				position:relative;
+
+				color:#FFFFFF;
+
+				margin:0px auto;
+				padding:20px 30px 30px;
+				border-top:0px;
+			}
+
+				.jobs__filter{
+					margin-bottom:25px;
+					padding-bottom:25px;
+					border-bottom:1px solid #77869E;
+				}
+
+				.jobs__filter:last-child{
+					margin-bottom:0px;
+					padding-bottom:0px;
+					border-bottom:0px none;
+				}
 	
 	
 /* -- Contact Us ---------- */
