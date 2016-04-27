@@ -249,20 +249,20 @@ var MainApp = {
 	
 	updateJobBoard : function() {
 		var rssId = 'yXh8YGI0qaF4K3QEgX8U1w==';
-		var refLoc = '';
-		var buildId = ''
+		var refLoc = 'http://localhost:81/60degrees.com/';
+		var buildId = '1.00'
+		
+		console.log('performing JSON call');
 		
 		$.ajax({
 			type : 'GET',
-			// url : 'http://www.steveferrar.com/60degrees.com/ddogg/testdata.json',
-			// url : 'http://localhost:81/60degrees/testdata.json',
-			// url : 'http://www.mycompas.com/staff/jsonjobsv3.aspx?ID=' + rssId + '&proc=getalljobs', /*  + '&refloc=' + refLoc */
-			url : 'http://localhost:81/60degrees.com/wordpress/wp-content/themes/60degrees/data/testdata.json',
-			
+			url : 'http://www.mycompas.com/staff/jsonjobsv3.aspx?ID=' + rssId + '&refloc=' + refLoc + '&proc=getalljobs',
 			cache : false,
 			contentType : 'application/json',
-			dataType : 'json',
+			dataType : 'jsonp',
 			success : function(data) {
+				console.log('success');
+				
 				MasterState.setState(data);
 				CurrentState.setState(data);
 				
@@ -273,7 +273,7 @@ var MainApp = {
 				console.error(status, err.toString());
 			}
 		});
-		console.log('performing JSON call');
+		
 	},
 }
 
@@ -349,7 +349,7 @@ var Job = React.createClass({
 						{this.jobTypeCheck()}
 					</h4>
 					<p className="job__details-meta">
-						<a href="#" className="job__details-company"><i className="fa fa-suitcase" aria-hidden="true"></i> {this.props.data.Region}</a>
+						<a href="#" className="job__details-company"><i className="fa fa-suitcase" aria-hidden="true"></i> {this.props.data.Category}</a>
 						<a href="#" className="job__details-location"><i className="fa fa-map-marker" aria-hidden="true"></i> {this.props.data.JobCity}, {this.props.data.JobState}, {this.props.data.JobCountry}</a>
 					</p>
 					<p className="job__details-description">{this.props.data.JobDesc_TEXT}</p>

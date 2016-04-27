@@ -92,16 +92,17 @@
 	</div>
 
 	<script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery-1.11.3.min.js"></script>
-		
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/react/react.js" type="text/javascript"></script>
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/react/react-dom.js" type="text/javascript"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 	
+	<?php if(is_page('jobs')) { ?>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/react/react.js" type="text/javascript"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/react/react-dom.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/react/react-containers.js" type="text/babel"></script>
+	<?php }; ?>
+		
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 		
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/react/react-containers.js" type="text/babel"></script>
-	
     <!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
